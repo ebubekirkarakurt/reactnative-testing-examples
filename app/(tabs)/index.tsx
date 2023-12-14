@@ -1,18 +1,12 @@
 import { StyleSheet, View } from 'react-native';
-import MyApp from '../../components/MyApp';
-
-
+import { NavigationContainer } from '@react-navigation/native';
+import { RootNavigator } from '../../navigation/navigation';
 
 export default function TabOneScreen() {
 
-  function onItemPress() : void{
-    console.log("pressed")
-  }
-
   return (
-    <View style={styles.container}>
-      <MyApp onItemPressed={onItemPress}/>
-    </View>
+
+     <RootNavigator></RootNavigator>
   );
 }
 
@@ -25,10 +19,5 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+  }
 });

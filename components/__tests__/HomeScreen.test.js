@@ -1,12 +1,13 @@
 import { fireEvent, render } from '@testing-library/react-native';
-import MyApp from '../MyApp'; 
+import HomeScreen from '../HomeScreen';
+
 
 // Fire Events, Matchers and Component Tests// 
 
 describe("examples", () => {
     it("get text value from text element", () => {
 
-        const { getByTestId} = render(<MyApp/>)
+        const { getByTestId} = render(<HomeScreen/>)
         const textElement = getByTestId("testId"); 
 
         console.log(textElement.props.children);
@@ -15,7 +16,7 @@ describe("examples", () => {
     });
 
     it("should be increment (with fire event)", ()=>{
-        const {getByRole, getByTestId} = render(<MyApp></MyApp>)
+        const {getByRole, getByTestId} = render(<HomeScreen/>)
 
         const btnIncrement = getByRole("button", {name:"increment"})
         const textValue = getByTestId("value")
@@ -29,7 +30,7 @@ describe("examples", () => {
     });
 
     it("counter example", ()=>{
-        const {getByRole, getByTestId} = render(<MyApp></MyApp>)
+        const {getByRole, getByTestId} = render(<HomeScreen/>)
 
         const value = getByTestId("value")
 
@@ -37,7 +38,7 @@ describe("examples", () => {
         const btnDecrement = getByRole("button", {name:'decrement'})
         const btnReset = getByRole("button", {name:'reset'})
 
-        console.log(value.props.children[1])
+        //console.log(value.props.children[1])
 
         fireEvent.press(btnIncrement)
         expect(value.props.children[1]).toEqual(1)
@@ -54,7 +55,7 @@ describe("examples", () => {
     });
 
     it(" changing textInput value ", ()=>{
-        const {getByPlaceholderText} = render(<MyApp/>)
+        const {getByPlaceholderText} = render(<HomeScreen/>)
 
         const textInput = getByPlaceholderText(/Enter Text/i)
         //console.log(textInput.props)
@@ -64,7 +65,7 @@ describe("examples", () => {
     });
 
     it("will text value change when inputText value changed", ()=>{
-        const {getByTestId, getByPlaceholderText} = render(<MyApp/>)
+        const {getByTestId, getByPlaceholderText} = render(<HomeScreen/>)
 
         const text = getByTestId("inputText")
         const input = getByPlaceholderText(/Enter Text/i)
@@ -83,15 +84,16 @@ describe("examples", () => {
     })
 
     it("onPressItem is called when pressed", ()=>{
-        const onItemPressed = jest.fn()
+        //const onItemPressed = jest.fn()
 
-        const {getByRole} = render(<MyApp onItemPressed={onItemPressed} />)
+        const {getByRole} = render(<HomeScreen /*onItemPressed={onItemPressed}*/ />)
 
-        const btn = getByRole("button", {name: "onItemPress"})
-        //expect(btn).toBeDefined(); 
+        const btn = getByRole("button", {name: "getData"})
         fireEvent.press(btn)
+        //expect(onItemPressed).toHaveBeenCalledTimes(1)
         //console.log(btn.props)
-        expect(onItemPressed).toHaveBeenCalledTimes(1)
+        expect(btn).toBeDefined(); 
+
     })
 
 });

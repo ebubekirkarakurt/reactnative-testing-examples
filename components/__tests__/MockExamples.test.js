@@ -19,7 +19,7 @@ describe(' mock examples', ()=>{
 
     it("doAdd with paramaters" , ()=>{
         doAdd(1,2, doAddCallBack);
-        console.log(doAddCallBack.mock)
+        //console.log(doAddCallBack.mock)
         expect(doAddCallBack).toHaveBeenLastCalledWith(3)
     })
 
