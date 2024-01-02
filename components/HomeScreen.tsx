@@ -1,6 +1,7 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import { TextInput } from 'react-native-gesture-handler'
+import GetData from './GetData'
 
 
 const HomeScreen = () => {
@@ -48,7 +49,7 @@ const HomeScreen = () => {
         title='getData' 
         onPress={()=>console.log("hey")}
       />
-
+      <GetData/>
     </View>
   )
 }
