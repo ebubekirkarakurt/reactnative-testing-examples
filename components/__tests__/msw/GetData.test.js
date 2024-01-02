@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react-native';
-import { tasksHandler, tasksHandlerException } from '../../msw-service/handlers';
+import { tasksHandler, tasksHandlerException } from '../msw-service/handlers';
 import GetData from '../../GetData';
-import { mswServer } from '../../msw-service/msw-server';
+import { mswServer } from '../msw-service/msw-server';
 
 describe('Component: TaskList', () => {
   it('displays returned tasks on successful fetch', async () => {
