@@ -3,11 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { RootNavigator } from '../../navigation/navigation';
 
 export default function TabOneScreen() {
-
-  return (
-
-     <RootNavigator></RootNavigator>
-  );
+  return <RootNavigator></RootNavigator>;
 }
 
 const styles = StyleSheet.create({
@@ -19,5 +15,5 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-  }
+  },
 });
